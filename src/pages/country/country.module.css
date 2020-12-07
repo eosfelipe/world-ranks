@@ -90,7 +90,7 @@
   gap: 24px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 720px) {
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

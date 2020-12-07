@@ -6,7 +6,7 @@ import SearchInput from "../components/SearchInput/SearchInput";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ countries }) {
-  console.log(countries);
+  // console.log(countries);
 
   const [keyword, setKeyword] = useState("");
 
@@ -24,12 +24,15 @@ export default function Home({ countries }) {
 
   return (
     <Layout>
-      <div className={styles.counts}>Found {countries.length} countries</div>
-      <SearchInput
-        placeholder="Filter by Name, Region or Subregion"
-        onChange={onInputChange}
-      />
-
+      <div className={styles.inputContainer}>
+        <div className={styles.counts}>Found {countries.length} countries</div>
+        <div className={styles.input}>
+          <SearchInput
+            placeholder="Filter by Name, Region or Subregion"
+            onChange={onInputChange}
+          />
+        </div>
+      </div>
       <CountriesTable countries={filteredCountries} />
     </Layout>
   );
