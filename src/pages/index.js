@@ -39,7 +39,7 @@ export default function Home({ countries }) {
 }
 
 export const getStaticProps = async () => {
-  const url = process.env.URL_API || "http://restcountries.eu/rest/v2/all";
+  const url = "https://restcountries.eu/rest/v2/all";
   const response = await fetch(url);
   const countries = await response.json();
 

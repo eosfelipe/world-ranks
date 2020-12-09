@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./country.module.css";
 
 const getCountry = async (id) => {
-  const url = process.env.URL_API2 || "http://restcountries.eu/rest/v2/alpha/";
+  const url = "https://restcountries.eu/rest/v2/alpha/";
   const response = await fetch(`${url}${id}`);
   const country = await response.json();
   return country;
@@ -92,7 +92,7 @@ const Country = ({ country }) => {
 export default Country;
 
 export const getStaticPaths = async () => {
-  const url = process.env.URL_API || "http://restcountries.eu/rest/v2/all";
+  const url = "https://restcountries.eu/rest/v2/all";
   const response = await fetch(url);
   const countries = await response.json();
 
